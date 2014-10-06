@@ -8,6 +8,10 @@
 'use strict';
 
 module.exports = function (a, b) {
+  if (Array.isArray(a)) {
+    return a[a.length - 1] === b;
+  }
+
   a = String(a);
   b = String(b);
 

@@ -1,7 +1,7 @@
 {
   "name": "ends-with",
-  "description": "Returns `true` if the given `string` ends with `suffix`.",
-  "version": "0.1.0",
+  "description": "Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for comparisons.",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/ends-with",
   "author": {
     "name": "Jon Schlinkert",
@@ -36,8 +36,16 @@
     "verb-tag-jscomments": ">= 0.2.0"
   },
   "keywords": [
-
+    "array",
+    "end",
+    "ends",
+    "javascript",
+    "js",
+    "string",
+    "suffix",
+    "util",
+    "utility",
+    "utils"
   ],
-  "dependencies": {
-  }
+  "dependencies": {}
 }

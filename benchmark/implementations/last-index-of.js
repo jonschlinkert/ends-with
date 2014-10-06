@@ -1,11 +1,5 @@
 'use strict';
 
-/**
- * ```js
- * indexOf(a, b);
- * ```
- */
-
 var endsWith = module.exports = function(a, b) {
   a = String(a);
   b = String(b);

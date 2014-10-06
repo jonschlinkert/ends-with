@@ -1,7 +1,7 @@
 # ends-with [![NPM version](https://badge.fury.io/js/ends-with.svg)](http://badge.fury.io/js/ends-with)
 
 
-> Returns `true` if the given `string` ends with `suffix`.
+> Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for comparisons.
 
 ## Install
 #### Install with [npm](npmjs.org):
@@ -15,7 +15,7 @@ npm i ends-with --save-dev
 This uses the fasted version of 9 different [implementations](benchmark/implementations) that were benchmarked.
 
 ```bash
-npm benchmark/benchmark
+node benchmark
 ```
 
 ## Run tests
@@ -31,6 +31,21 @@ var endsWith = require('ends-with');
 
 endsWith('abc', 'c');
 //=> true
+
+endsWith(['a', 'b', 'c'], 'c');
+//=> true
+
+endsWith(['abc', 'abc', 'abc'], 'c');
+//=> false
+
+endsWith(['abc', 'abc', 'abc'], 'c');
+//=> false
+
+endsWith(['a', 'b', 42], 42)
+//=> true
+
+endsWith(['a', 'b', 42], '42')
+//=> false
 ```
 
 ## Author
