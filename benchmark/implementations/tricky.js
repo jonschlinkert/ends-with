@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = function (a, b) {
   // if (Array.isArray(a)) {
@@ -8,13 +8,12 @@ module.exports = function (a, b) {
   a = String(a);
   b = String(b);
 
-  var i = b.length;
-  var len = a.length - i;
+  var aLast = a.length - 1;
+  var bLast = b.length - 1;
 
-  while (i--) {
-    if (b.charAt(i) !== a.charAt(len + i)) {
-      return false;
-    }
+  if (a.charAt(aLast) !== b.charAt(bLast)) {
+    return false;
   }
+
   return true;
 };
