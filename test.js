@@ -7,55 +7,56 @@
 
 'use strict';
 
-var should = require('should');
+require('mocha');
+var assert = require('assert');
 var endsWith = require('./');
 
 describe('endsWith', function () {
   it('should be true if the string ends with the given pattern.', function () {
-    endsWith('a/b/c.txt', 'c.txt').should.be.true;
-    endsWith('a/b/c.txt', '.txt').should.be.true;
-    endsWith('abc', 'c').should.be.true;
+    assert(endsWith('a/b/c.txt', 'c.txt'));
+    assert(endsWith('a/b/c.txt', '.txt'));
+    assert(endsWith('abc', 'c'));
   });
 
   it('should be false if the string does not end with the given pattern.', function () {
-    endsWith('a/b/c.txt', 'c.tx').should.be.false;
-    endsWith('a/b/c.txt', 'c.tt').should.be.false;
+    assert(!endsWith('a/b/c.txt', 'c.tx'));
+    assert(!endsWith('a/b/c.txt', 'c.tt'));
   });
 
   it('should be true if the array ends with the given string.', function () {
-    endsWith(['a', 'b', 'c'], 'c').should.be.true;
-    endsWith(['a', 'b', 'c.txt'], 'c.txt').should.be.true;
+    assert(endsWith(['a', 'b', 'c'], 'c'));
+    assert(endsWith(['a', 'b', 'c.txt'], 'c.txt'));
   });
 
   it('should be false if the array does not end with the given string.', function () {
-    endsWith(['a', 'b', 'c.txt'], '.txt').should.be.false;
-    endsWith(['a', 'b', 'c.txt'], 'c.tx').should.be.false;
-    endsWith(['a', 'b', 'c.txt'], 'c.tt').should.be.false;
-    endsWith(['abc', 'abc', 'abc'], 'c').should.be.false;
+    assert(!endsWith(['a', 'b', 'c.txt'], '.txt'));
+    assert(!endsWith(['a', 'b', 'c.txt'], 'c.tx'));
+    assert(!endsWith(['a', 'b', 'c.txt'], 'c.tt'));
+    assert(!endsWith(['abc', 'abc', 'abc'], 'c'));
   });
 
   it('should be true if the array ends with the given number.', function () {
-    endsWith(['a', 'b', 42], 42).should.be.true;
-    endsWith(['a', 'b', 42], '42').should.be.false;
-    endsWith(['a', 'b', 42], 41).should.be.false;
+    assert(endsWith(['a', 'b', 42], 42));
+    assert(!endsWith(['a', 'b', 42], '42'));
+    assert(!endsWith(['a', 'b', 42], 41));
   });
 
   it('should be false if the array ends with the given object.', function () {
-    endsWith(['a', 'b', {'c': 'd'}], {'c': 'd'}).should.be.false;
-    endsWith(['a', 'b', {'c': 'd'}], {}).should.be.false;
-    endsWith(['a', 'b', {'c': 'd'}], 'd').should.be.false;
+    assert(!endsWith(['a', 'b', {'c': 'd'}], {'c': 'd'}));
+    assert(!endsWith(['a', 'b', {'c': 'd'}], {}));
+    assert(!endsWith(['a', 'b', {'c': 'd'}], 'd'));
   });
 
   it('should be false if the array ends with the given array of strings.', function () {
-    endsWith(['a', 'b', ['c', 'd', 'e']], ['c', 'd', 'e']).should.be.false;
-    endsWith(['a', 'b', ['q', 'w', 'e']], ['c', 'd', 'e']).should.be.false;
-    endsWith(['a', 'b', 'c'], ['c']).should.be.false;
+    assert(!endsWith(['a', 'b', ['c', 'd', 'e']], ['c', 'd', 'e']));
+    assert(!endsWith(['a', 'b', ['q', 'w', 'e']], ['c', 'd', 'e']));
+    assert(!endsWith(['a', 'b', 'c'], ['c']));
   });
 
   it('should be false if the array ends with the given array of object(s).', function () {
-    endsWith(['a', 'b', [{'c': 'd'}]], [{'c': 'd'}]).should.be.false;
-    endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'q': 'w'}, {'e': 'f'}]).should.be.false;
-    endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'e': 'f'}, {'q': 'w'}]).should.be.false;
-    endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'e': 'f'}]).should.be.false;
+    assert(!endsWith(['a', 'b', [{'c': 'd'}]], [{'c': 'd'}]));
+    assert(!endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'q': 'w'}, {'e': 'f'}]));
+    assert(!endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'e': 'f'}, {'q': 'w'}]));
+    assert(!endsWith(['a', 'b', [{'q': 'w'}, {'e': 'f'}]], [{'e': 'f'}]));
   });
 });
