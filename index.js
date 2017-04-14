@@ -1,8 +1,8 @@
 /*!
- * ends-with <https://github.com/jonschlinkert/ends-with>
+ * ends-with <git://github.com/jonschlinkert/ends-with.git>
  *
- * Copyright (c) 2014 Jon Schlinkert, contributors.
- * Licensed under the MIT license.
+ * Copyright (c) 2014, 2017, Jon Schlinkert.
+ * Released under the [object Object] License.
  */
 
 'use strict';
