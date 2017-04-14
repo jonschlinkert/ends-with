@@ -1,7 +1,7 @@
 {
   "name": "ends-with",
   "description": "Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for comparisons.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/ends-with",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
