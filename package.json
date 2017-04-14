@@ -1,7 +1,7 @@
 {
   "name": "ends-with",
   "description": "Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for comparisons.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/jonschlinkert/ends-with",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -26,7 +26,7 @@
   "devDependencies": {
     "benchmarked": "^1.0.0",
     "gulp-format-md": "^0.1.12",
-    "should": "^11.2.1"
+    "mocha": "^3.2.0"
   },
   "keywords": [
     "array",
